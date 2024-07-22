@@ -4,9 +4,20 @@
 
 @layer base {
   body {
-    @apply m-0 p-0 box-border;
+    @apply m-0 box-border p-0;
   }
 }
 
 @layer utilities {
+  .text-16-400 {
+    @apply text-[16px] leading-[24px] font-normal;
+  }
+
+  .text-16-500 {
+    @apply text-[16px] leading-[24px] font-medium;
+  }
+
+  .text-24-700 {
+    @apply text-[24px] leading-[32px] font-bold;
+  }
 }

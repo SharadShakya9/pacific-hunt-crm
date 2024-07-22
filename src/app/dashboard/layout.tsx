@@ -1,4 +1,7 @@
+"use client"
+
 import Sidebar from "@/components/Sidebar";
+import { GlobalStyle } from "@/lib/globalStyle";
 
 export default function DashboardLayout({
   children,
@@ -7,6 +10,7 @@ export default function DashboardLayout({
 }) {
   return (
     <>
+      <GlobalStyle/>
       <Sidebar>{children}</Sidebar>
     </>
   );
