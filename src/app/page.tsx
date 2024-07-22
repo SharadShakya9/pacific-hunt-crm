@@ -1,20 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-export default function Home({ children } : { children : React.ReactNode }) {
+export default function Home() {
   return (
-    <main className="w-screen min-h-screen flex bg-light-2">
-      <div className="w-60 bg-blue-2">
-        <img className="m-[32px]" src="/logo pacific 1.png" alt="pacific hunt logo" />
-
-        <div></div>
-      </div>
-
-      <div className="flex-grow">
-        <div className="bg-blue-2 h-[80px] flex justify-end"></div>
-
-        <div>Configurations</div>
-      </div>
+    <main className="flex min-h-screen w-screen bg-light-2">
+      <Link href="/dashboard">
+        <p>Continue to Dashboard</p>
+      </Link>
     </main>
   );
 }

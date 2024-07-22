@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
-const vietnam = Be_Vietnam_Pro({ weight: '400', subsets: ["latin"] })
+const vietnam = Be_Vietnam_Pro({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pacific Hunt CRM",
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={vietnam.className}>{children}</body>
+      <body className={vietnam.className}>
+        <AntdRegistry>{children}</AntdRegistry>
+      </body>
     </html>
   );
 }
