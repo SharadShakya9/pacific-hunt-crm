@@ -113,8 +113,8 @@ const items = [
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="flex min-h-screen w-screen bg-light-2">
-      <div className="w-60 bg-blue-2">
+    <main className="flex min-h-screen min-w-screen bg-light-2">
+      <div className="relative w-60 bg-blue-2">
         <img
           className="m-[32px]"
           src="/logo pacific 1.png"
@@ -123,17 +123,39 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
 
         <Layout className="bg-transparent">
           <Sider className="bg-transparent" width={240}>
-            <Menu className="bg-transparent flex flex-col gap-2" items={items} />
+            <Menu
+              className="flex flex-col gap-2 bg-transparent"
+              items={items}
+            />
           </Sider>
         </Layout>
+
+        <div className="mx-1 mt-[200px] flex cursor-pointer items-center gap-3 p-[16px]">
+          <svg
+            width="17"
+            height="20"
+            viewBox="0 0 17 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.8125 0H3.1875C1.38125 0 0 1.3 0 3V9H9.1375L6.69375 6.7C6.26875 6.3 6.26875 5.7 6.69375 5.3C7.11875 4.9 7.75625 4.9 8.18125 5.3L12.4312 9.3C12.8562 9.7 12.8562 10.3 12.4312 10.7L8.18125 14.7C7.75625 15.1 7.11875 15.1 6.69375 14.7C6.26875 14.3 6.26875 13.7 6.69375 13.3L9.1375 11H0V17C0 18.7 1.38125 20 3.1875 20H13.8125C15.6187 20 17 18.7 17 17V3C17 1.3 15.6187 0 13.8125 0Z"
+              fill="#EFFAFF"
+            />
+          </svg>
+
+          <p className="text-16-500 text-light-3">Log Out</p>
+        </div>
       </div>
 
       <div className="flex-grow">
         <div className="flex h-[80px] items-center justify-end bg-blue-2 pr-[50px]">
-          <div className="flex h-full text-center gap-3 items-center">
+          <div className="flex h-full items-center gap-3 text-center">
             <img src="/bellwithred.svg" alt="" />
-            <div className="flex gap-2 items-center text-16-400 text-light-2">
-              <Avatar style={{ background: "purple", color: "white" }}>P</Avatar>
+            <div className="text-16-400 flex items-center gap-2 text-light-2">
+              <Avatar style={{ background: "purple", color: "white" }}>
+                P
+              </Avatar>
               Prabodh
             </div>
           </div>

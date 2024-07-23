@@ -1,60 +1,75 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
-const configurationdetails =  [
+const configurationdetails = [
   {
     key: 1,
-    label: (
-      <Link href=""><span>Categories</span></Link>
-    )
+    label: "Categories",
+    link: "/dashboard/configurations/categories",
   },
   {
     key: 2,
-    label: (
-      <Link href=""><span>Profession</span></Link>
-    )
+    label: "Profession",
+    link: "/dashboard/configurations/categories",
   },
   {
     key: 3,
-    label: (
-      <Link href=""><span>Company Type</span></Link>
-    )
+    label: "Company Type",
+    link: "/dashboard/configurations/categories",
   },
   {
     key: 4,
-    label: (
-      <Link href=""><span>Skill</span></Link>
-    )
+    label: "Skill",
+    link: "/dashboard/configurations/categories",
   },
   {
     key: 5,
-    label: (
-      <Link href=""><span>Social Media</span></Link>
-    )
+    label: "Social Media",
+    link: "/dashboard/configurations/categories",
   },
   {
     key: 6,
-    label: (
-      <Link href=""><span>Job Type</span></Link>
-    )
+    label: "Job Type",
+    link: "/dashboard/configurations/categories",
   },
-]
+  {
+    key: 7,
+    label: "Education level",
+    link: "/dashboard/configurations/categories",
+  },
+  {
+    key: 8,
+    label: "Experience level",
+    link: "/dashboard/configurations/categories",
+  },
+  {
+    key: 9,
+    label: "Work location",
+    link: "/dashboard/configurations/categories",
+  },
+  {
+    key: 10,
+    label: "Company Type",
+    link: "/dashboard/configurations/categories",
+  },
+];
 
 const Configuration = () => {
   return (
-    <section className='flex flex-col gap-6'>
-      <div className='flex flex-col gap-1'>
-        <p className='text-dark-2 text-24-700'>Configurations</p>
-        <p className='text-dark-3 text-16-400'>Configure details from here.</p>
-      </div>
+    <div className="grid grid-cols-3 gap-6">
+      {configurationdetails.map((item) => (
+        <Link href={item.link}>
+          <div
+            key={item.key}
+            className="flex h-[88px] cursor-pointer items-center justify-between rounded-md bg-white px-6 shadow-card"
+          >
+            <p className="text-16-600 text-dark-2">{item.label}</p>
+            <img src="/arrow-right.svg" alt="" />
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+};
 
-      <div>
-        {configurationdetails.map((item) => (
-          <div key={item.key}>{item.label}</div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-export default Configuration
+export default Configuration;

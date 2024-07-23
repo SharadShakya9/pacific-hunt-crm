@@ -17,6 +17,14 @@
     @apply text-[16px] leading-[24px] font-medium;
   }
 
+  .text-16-600 {
+    @apply text-[16px] leading-[24px] font-semibold;
+  }
+
+  .text-18-600 {
+    @apply text-[18px] leading-[24px] font-semibold;
+  }
+
   .text-24-700 {
     @apply text-[24px] leading-[32px] font-bold;
   }

@@ -19,19 +19,23 @@ const config = {
         "2xl": "1400px",
       },
     },
+    boxShadow: {
+      "card": "0px 2px 5px 2px #BECCFF"
+    },
     extend: {
       colors: {
         light: {
           1: "#FFFFFF",
           2: "#F5F6F6",
-          3: "#EFFAFF"
+          3: "#EFFAFF",
         },
         dark: {
           1: "#000000",
           2: "#3C3D3D",
           3: "#6B6D6F",
           4: "#E6E7E7",
-          5: "#AFB0B1"
+          5: "#AFB0B1",
+          6: "#363637",
         },
         blue: {
           1: "#01A3E0",
