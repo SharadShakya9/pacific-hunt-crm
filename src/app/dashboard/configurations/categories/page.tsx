@@ -2,6 +2,18 @@ import BlueButton from "@/components/ui/BlueButton";
 import Link from "next/link";
 import React from "react";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+
 const Categories = () => {
   return (
     <div>
@@ -33,9 +45,65 @@ const Categories = () => {
           <BlueButton>
             <img src="/import.svg" alt="" /> <span>Import .xlsx File</span>
           </BlueButton>
-          <BlueButton>
-            <img src="/add.svg" alt="" /> <span>Create Categories</span>
-          </BlueButton>
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <BlueButton>
+                <img src="/add.svg" alt="" /> <span>Create Categories</span>
+              </BlueButton>
+            </DialogTrigger>
+            <DialogContent className="rounded-md px-0">
+              <DialogHeader className="border-b border-dark-7">
+                <DialogTitle className="text-18-600 pb-[25px] text-dark-2">
+                  Create Categories
+                </DialogTitle>
+              </DialogHeader>
+
+              <div className="mx-[25px] mb-[80px] space-y-[20px]">
+                <div className="flex flex-col gap-[8px]">
+                  <Label htmlFor="categoryname">
+                    <p className="text-16-500 text-dark-2">Category Name</p>
+                  </Label>
+                  <Input
+                    id="categoryname"
+                    className="text-14-400 text-dark-2"
+                    placeholder="Enter category name"
+                  />
+                </div>
+
+                <label
+                  htmlFor="popular"
+                  className="group flex gap-2 rounded border border-dark-7 px-[8px] py-[12px] has-[:checked]:border-blue-1 has-[:checked]:bg-light-3"
+                >
+                  <input
+                    id="popular"
+                    type="checkbox"
+                    className="peer appearance-none"
+                  />
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path className="hidden group-has-[:checked]:inline"
+                      d="M5.14286 0C3.77889 0 2.47078 0.541835 1.50631 1.50631C0.541835 2.47078 0 3.77889 0 5.14286V18.8571C0 20.2211 0.541835 21.5292 1.50631 22.4937C2.47078 23.4582 3.77889 24 5.14286 24H18.8571C20.2211 24 21.5292 23.4582 22.4937 22.4937C23.4582 21.5292 24 20.2211 24 18.8571V5.14286C24 3.77889 23.4582 2.47078 22.4937 1.50631C21.5292 0.541835 20.2211 0 18.8571 0H5.14286ZM17.7497 9.17829L10.8926 16.0354C10.813 16.1153 10.7184 16.1786 10.6142 16.2218C10.5101 16.265 10.3985 16.2872 10.2857 16.2872C10.173 16.2872 10.0613 16.265 9.9572 16.2218C9.85307 16.1786 9.75848 16.1153 9.67886 16.0354L6.25029 12.6069C6.08934 12.4459 5.99892 12.2276 5.99892 12C5.99892 11.7724 6.08934 11.5541 6.25029 11.3931C6.41123 11.2322 6.62953 11.1418 6.85714 11.1418C7.08476 11.1418 7.30305 11.2322 7.464 11.3931L10.2857 14.2166L16.536 7.96457C16.6969 7.80362 16.9152 7.7132 17.1429 7.7132C17.3705 7.7132 17.5888 7.80362 17.7497 7.96457C17.9107 8.12552 18.0011 8.34381 18.0011 8.57143C18.0011 8.79904 17.9107 9.01734 17.7497 9.17829Z"
+                      fill="#01A3E0"
+                    />
+                    <rect className="group-has-[:checked]:hidden" x="0.5" y="0.5" width="23" height="23" rx="3.5" stroke="#AFB0B1"/>
+                  </svg>
+                  
+                  <span className="text-16-400 text-dark-3 group-has-[:checked]:font-semibold group-has-[:checked]:text-blue-1">
+                    Marked as popular categories
+                  </span>
+                </label>
+              </div>
+              <DialogFooter className="mx-[25px]">
+                <BlueButton>Create</BlueButton>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </div>

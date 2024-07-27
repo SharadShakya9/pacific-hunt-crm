@@ -113,7 +113,7 @@ const items = [
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="flex min-h-screen min-w-screen bg-light-2">
+    <main className="min-w-screen flex min-h-screen bg-light-2">
       <div className="relative w-60 bg-blue-2">
         <img
           className="m-[32px]"
@@ -144,7 +144,9 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
             />
           </svg>
 
-          <p className="text-16-500 text-light-3">Log Out</p>
+          <Link href="/">
+            <p className="text-16-500 text-light-3">Log Out</p>
+          </Link>
         </div>
       </div>
 

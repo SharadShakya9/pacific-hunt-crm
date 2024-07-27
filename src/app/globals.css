@@ -9,6 +9,10 @@
 }
 
 @layer utilities {
+.text-14-400 {
+  @apply text-[14px] leading-[20px] font-normal;
+}
+
   .text-16-400 {
     @apply text-[16px] leading-[24px] font-normal;
   }
