@@ -20,7 +20,8 @@ const config = {
       },
     },
     boxShadow: {
-      "card": "0px 2px 5px 2px #BECCFF"
+      "card": "0px 2px 5px 2px #BECCFF",
+      "datatable": "0px 2px 12px 0px #B0B8D3, 0px 2px 4px 0px #ACBCF5"
     },
     extend: {
       colors: {

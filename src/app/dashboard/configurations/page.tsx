@@ -10,17 +10,17 @@ const configurationdetails = [
   {
     key: 2,
     label: "Profession",
-    link: "/dashboard/configurations/categories",
+    link: "/dashboard/configurations/profession",
   },
   {
     key: 3,
     label: "Company Type",
-    link: "/dashboard/configurations/categories",
+    link: "/dashboard/configurations/companytype",
   },
   {
     key: 4,
     label: "Skill",
-    link: "/dashboard/configurations/categories",
+    link: "/dashboard/configurations/skill",
   },
   {
     key: 5,
@@ -30,7 +30,7 @@ const configurationdetails = [
   {
     key: 6,
     label: "Job Type",
-    link: "/dashboard/configurations/categories",
+    link: "/dashboard/configurations/jobtype",
   },
   {
     key: 7,
@@ -40,7 +40,7 @@ const configurationdetails = [
   {
     key: 8,
     label: "Experience level",
-    link: "/dashboard/configurations/categories",
+    link: "/dashboard/configurations/experiencelevel",
   },
   {
     key: 9,
