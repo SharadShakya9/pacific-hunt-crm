@@ -1,49 +1,51 @@
 "use client";
 
 import React from "react";
-import { Table } from 'antd';
-import type { TableProps } from 'antd';
+import { Table } from "antd";
+import type { TableProps } from "antd";
 import { formatDate } from "@/lib/dateHelper";
+import { Switch } from "@/components/ui/switch";
 
 export interface Category {
-  key: React.Key;
-  serial: number;
-  name: string;
-  createdOn: string;
-  spotlight: boolean;
-  status: boolean;
-};
+  id: React.Key;
+  category: string;
+  createdAt: string;
+  isPopularCategory: boolean;
+  isActiveCategory: boolean;
+}
 
-export const columns: TableProps<Category>['columns'] = [
+export const columns: TableProps<Category>["columns"] = [
   {
-    dataIndex: "serial",
+    dataIndex: "id",
     title: () => <div className="text-16-500 text-left text-dark-2">S.N</div>,
-    render: (check, record) => (
-        <p className="text-14-400 text-left text-dark-2">{record.serial}</p>
-    )
+    render: (check, record, index) => (
+      <p className="text-14-400 text-left text-dark-2">{index + 1}</p>
+    ),
   },
   {
-    dataIndex: "name",
+    dataIndex: "category",
     title: () => (
       <div className="text-16-500 text-left text-dark-2">Categories Name</div>
     ),
     render: (check, record) => (
-      <p className="text-14-400 text-left text-dark-2">
-        {record.name}
-      </p>
+      <p className="text-14-400 text-left text-dark-2">{record.category}</p>
     ),
   },
   {
-    dataIndex: "createdOn",
+    dataIndex: "createdAt",
     title: () => (
       <div className="text-16-500 text-left text-dark-2">Created On</div>
     ),
     render: (check, record) => {
-      return <p className="text-14-400 text-left text-dark-2">{formatDate(record.createdOn)}</p>;
+      return (
+        <p className="text-14-400 text-left text-dark-2">
+          {formatDate(record.createdAt)}
+        </p>
+      );
     },
   },
   {
-    dataIndex: "spotlight",
+    dataIndex: "isPopularCategory",
     title: () => (
       <div className="text-16-500 text-left text-dark-2">Spotlight</div>
     ),
@@ -52,7 +54,7 @@ export const columns: TableProps<Category>['columns'] = [
         <>
           <div className="flex justify-between">
             <div>
-              {record.spotlight ? (
+              {record.isPopularCategory ? (
                 <div className="rounded-[30px] bg-green-1 px-4 py-3">
                   <p className="text-14-500 text-green-2">Popular Categories</p>
                 </div>
@@ -63,7 +65,7 @@ export const columns: TableProps<Category>['columns'] = [
               )}
             </div>
 
-            <div>
+            <div className="w-[275px]">
               <label
                 htmlFor="popular"
                 className="group flex gap-2 rounded border border-dark-7 px-[8px] py-[12px] has-[:checked]:border-blue-1 has-[:checked]:bg-light-3"
@@ -72,7 +74,7 @@ export const columns: TableProps<Category>['columns'] = [
                   id="popular"
                   type="checkbox"
                   className="peer appearance-none"
-                  checked={record.spotlight}
+                  checked={record.isPopularCategory}
                 />
                 <svg
                   width="24"
@@ -108,7 +110,31 @@ export const columns: TableProps<Category>['columns'] = [
     },
   },
   {
-    dataIndex: "status",
-    title: "Action",
+    dataIndex: "isActiveCategory",
+    title: () => (
+      <div className="text-16-500 text-left text-dark-2">Action</div>
+    ),
+    render: (check, record) => {
+      return (
+        <div className="flex items-center gap-[21px]">
+          <div className="rounded border border-light-4 p-2 cursor-pointer">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.5 12.5501V15.0834C0.5 15.3168 0.683333 15.5001 0.916667 15.5001H3.45C3.55833 15.5001 3.66667 15.4584 3.74167 15.3751L12.8417 6.28342L9.71667 3.15842L0.625 12.2501C0.541667 12.3334 0.5 12.4334 0.5 12.5501ZM15.2583 3.86675C15.3356 3.78966 15.3969 3.69808 15.4387 3.59727C15.4805 3.49646 15.502 3.38839 15.502 3.27925C15.502 3.17011 15.4805 3.06204 15.4387 2.96123C15.3969 2.86042 15.3356 2.76885 15.2583 2.69175L13.3083 0.74175C13.2312 0.664497 13.1397 0.603208 13.0389 0.56139C12.938 0.519572 12.83 0.498047 12.7208 0.498047C12.6117 0.498047 12.5036 0.519572 12.4028 0.56139C12.302 0.603208 12.2104 0.664497 12.1333 0.74175L10.6083 2.26675L13.7333 5.39175L15.2583 3.86675Z"
+                fill="#6B6D6F"
+              />
+            </svg>
+          </div>
+
+          <Switch checked={record.isActiveCategory} />
+        </div>
+      );
+    },
   },
 ];

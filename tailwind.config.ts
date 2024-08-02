@@ -29,6 +29,7 @@ const config = {
           1: "#FFFFFF",
           2: "#F5F6F6",
           3: "#EFFAFF",
+          4: "#D0D1D1",
         },
         dark: {
           1: "#000000",

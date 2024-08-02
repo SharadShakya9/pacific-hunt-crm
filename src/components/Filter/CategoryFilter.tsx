@@ -1,14 +1,10 @@
 "use client";
 
-import {
-  DatePicker,
-  Input,
-  message,
-  Select,
-} from "antd";
+import { DatePicker, Input, message, Select } from "antd";
 import { Dayjs } from "dayjs";
 import React from "react";
-import { DropdownMenuRadioGroupDemo } from "../Dropdown";
+import { DropdownMenuRadioGroupDemo1 } from "../Dropdown1";
+import { DropdownMenuRadioGroupDemo2 } from "../Dropdown2";
 
 const { RangePicker } = DatePicker;
 
@@ -22,17 +18,32 @@ const handleChange = (value: number) => {
 // };
 
 export type MenuProps = {
-  label: string,
-  key: string,
-}
+  label: string;
+  key: string;
+};
 
-const items: MenuProps[] = [
+const spotlight: MenuProps[] = [
   {
     label: "All",
     key: "1",
   },
   {
     label: "Popular Categories",
+    key: "2",
+  },
+];
+
+const sortBy = [
+  {
+    label: "All",
+    key: "1",
+  },
+  {
+    label: "A-Z",
+    key: "2",
+  },
+  {
+    label: "Z-A",
     key: "2",
   },
 ];
@@ -62,7 +73,7 @@ const customFormat = (date: Dayjs | null): string => {
   return `${day} ${month}, ${year}`;
 };
 
-const CategoryFilter:React.FC = () => {
+const CategoryFilter: React.FC = () => {
   return (
     <div className="mb-6 flex h-10 items-center justify-between">
       <div className="h-full">
@@ -109,7 +120,12 @@ const CategoryFilter:React.FC = () => {
           format={customFormat}
         />
 
-        <DropdownMenuRadioGroupDemo menuProps={items}/>
+        <DropdownMenuRadioGroupDemo1
+          menuName="Spotlight"
+          menuProps={spotlight}
+        />
+
+        <DropdownMenuRadioGroupDemo2 menuName="Sort By:" menuProps={sortBy} />
       </div>
     </div>
   );

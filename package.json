@@ -18,6 +18,8 @@
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.0",
+    "@tanstack/react-query": "^5.51.18",
     "@tanstack/react-table": "^8.19.3",
     "@types/moment": "^2.13.0",
     "antd": "^5.19.4",

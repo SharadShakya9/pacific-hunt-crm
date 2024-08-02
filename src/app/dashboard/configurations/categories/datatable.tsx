@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Pagination, Select, Table } from "antd";
+import { Table } from "antd";
 import type { TableProps } from "antd";
 import { Category } from "@/app/dashboard/configurations/categories/columns";
 import CategoryFilter from "@/components/Filter/CategoryFilter";

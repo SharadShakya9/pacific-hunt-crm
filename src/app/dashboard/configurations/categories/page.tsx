@@ -1,3 +1,5 @@
+"use client";
+
 import BlueButton from "@/components/ui/BlueButton";
 import Link from "next/link";
 import React from "react";
@@ -14,15 +16,19 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 
 import { Category, columns } from "./columns";
-import { categories } from "@/data";
 import CategoryDataTable from "./datatable";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { apiClient } from "@/data";
 
-async function getData(): Promise<Category[]> {
-  return categories
-}
-
-const Categories = async () => {
-  const data = await getData()
+const Categories = () => {
+  const {
+    data: categories = [],
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => apiClient.get("category"),
+  });
 
   return (
     <div>
@@ -125,8 +131,8 @@ const Categories = async () => {
         </div>
       </div>
 
-      <div className="shadow-datatable px-5 py-6 mt-6 min-h-[1000px] rounded-lg bg-white">
-        <CategoryDataTable columns={columns} data={data} />
+      <div className="mt-6 min-h-[1000px] rounded-lg bg-white px-5 py-6 shadow-datatable">
+        <CategoryDataTable columns={columns} data={categories} />
       </div>
     </div>
   );

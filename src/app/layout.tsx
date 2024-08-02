@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import ReactQueryProvider from "@/lib/queryProvider";
 
 const vietnam = Be_Vietnam_Pro({ weight: "400", subsets: ["latin"] });
 
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={vietnam.className}>
-        <AntdRegistry>{children}</AntdRegistry>
+        <ReactQueryProvider>
+          <AntdRegistry>{children}</AntdRegistry>
+        </ReactQueryProvider>
       </body>
     </html>
   );

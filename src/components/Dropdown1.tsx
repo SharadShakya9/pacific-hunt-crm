@@ -13,18 +13,20 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { MenuProps } from "./Filter/CategoryFilter";
 
-export function DropdownMenuRadioGroupDemo({
+export function DropdownMenuRadioGroupDemo1({
   menuProps,
+  menuName,
 }: {
   menuProps: MenuProps[];
+  menuName: string;
 }) {
   const [position, setPosition] = React.useState("bottom");
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="flex items-center gap-5 px-3 rounded border border-dark-4">
-          Spotlight
+        <button className="flex items-center gap-5 rounded border border-dark-4 px-3">
+          {menuName}
           <svg
             width="12"
             height="7"
